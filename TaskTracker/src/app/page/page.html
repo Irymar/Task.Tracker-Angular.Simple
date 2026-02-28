@@ -1,0 +1,26 @@
+<main>
+  <section>
+    <form (ngSubmit)="addTask()">
+      <h1>Task Tracker</h1>
+      <input [(ngModel)]="taskInput" name="taskInput" type="text" placeholder="Add a new task" />
+      <button type="submit">Add Task</button>
+    </form>
+  </section>
+  <section>
+    <div>
+      <p>Filter:</p>
+      <button>All</button>
+      <button>Active</button>
+      <button>Completed</button>
+    </div>
+    <div>
+      <input type="text" placeholder="Search tasks">
+      <button type="submit">Search</button>
+    </div>
+  </section>
+  <ul>
+    @for (task of tasks; track $index) {
+      <li>{{ task }}</li>
+    }
+  </ul>
+</main>
